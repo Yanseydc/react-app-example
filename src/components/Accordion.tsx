@@ -8,12 +8,12 @@ type AccordionProps = {
 const Accordion = ({ title, children }: AccordionProps) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div>
-      <div>
-        <h1>{title}</h1>
-        <button onClick={() => setIsOpen(!isOpen)}>{ isOpen ? 'Close' : 'Open' }</button>
+    <div className="accordion">
+      <div className="accordion__group">
+        <h1 className="accordion__title">{title}</h1>
+        <button className="accordion__cta" onClick={() => setIsOpen(!isOpen)}>{ isOpen ? 'Close' : 'Open' }</button>
       </div>
-      <div>
+      <div className="accordion__content">
         {isOpen ? children : null}
       </div>
     </div>
